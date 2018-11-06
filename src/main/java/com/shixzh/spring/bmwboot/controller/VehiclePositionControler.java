@@ -16,8 +16,8 @@ public class VehiclePositionControler {
 
     private final AtomicLong count = new AtomicLong();
     @RequestMapping("/getAllSessionsOfAVehicle")
-    public VehiclePositionModel getAllSessionsOfAVehicle(@RequestParam(value = "name", defaultValue = "world") String name){
-        return new VehiclePositionModel(count.incrementAndGet(), name);
+    public VehiclePositionModel getAllSessionsOfAVehicle(@RequestParam(value = "session", defaultValue = "world") String session){
+        return new VehiclePositionModel(count.incrementAndGet(), session);
     }
 
 }
