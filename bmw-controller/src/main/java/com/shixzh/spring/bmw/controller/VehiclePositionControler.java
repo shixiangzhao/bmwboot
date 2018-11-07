@@ -1,8 +1,8 @@
-package com.shixzh.spring.bmwboot.controller;
+package com.shixzh.spring.bmw.controller;
 
-import com.shixzh.spring.bmwboot.common.CommonResult;
-import com.shixzh.spring.bmwboot.constants.ResultCode;
-import com.shixzh.spring.bmwboot.model.VehiclePositionModel;
+import com.shixzh.spring.bmw.common.CommonResult;
+import com.shixzh.spring.bmw.constants.ResultCode;
+import com.shixzh.spring.bmw.vo.VehiclePositionModel;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

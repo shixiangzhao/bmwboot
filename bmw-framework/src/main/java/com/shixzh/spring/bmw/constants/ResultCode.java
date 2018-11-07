@@ -1,4 +1,4 @@
-package com.shixzh.spring.bmwboot.constants;
+package com.shixzh.spring.bmw.constants;
 
 /**
  * @author: ZhaoShixiang <br>

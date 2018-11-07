@@ -1,4 +1,4 @@
-package com.shixzh.spring.bmwboot.common;
+package com.shixzh.spring.bmw.common;
 
 import java.io.Serializable;
 

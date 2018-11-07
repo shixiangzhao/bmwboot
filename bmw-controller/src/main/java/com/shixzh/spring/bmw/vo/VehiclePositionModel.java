@@ -1,4 +1,4 @@
-package com.shixzh.spring.bmwboot.model;
+package com.shixzh.spring.bmw.vo;
 
 /**
  * @author: ZhaoShixiang <br>
