@@ -18,6 +18,17 @@ public class CommonResult<T> implements Serializable {
 
     }
 
+    public CommonResult(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public CommonResult(Integer code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+
     public void setResult(Integer code, String msg) {
         this.code = code;
         this.msg = msg;

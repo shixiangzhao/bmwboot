@@ -1,5 +1,7 @@
 package com.shixzh.spring.bmwboot.controller;
 
+import com.shixzh.spring.bmwboot.common.CommonResult;
+import com.shixzh.spring.bmwboot.constants.ResultCode;
 import com.shixzh.spring.bmwboot.model.VehiclePositionModel;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,8 +18,11 @@ public class VehiclePositionControler {
 
     private final AtomicLong count = new AtomicLong();
     @RequestMapping("/getAllSessionsOfAVehicle")
-    public VehiclePositionModel getAllSessionsOfAVehicle(@RequestParam(value = "session", defaultValue = "world") String session){
-        return new VehiclePositionModel(count.incrementAndGet(), session);
+    public CommonResult<VehiclePositionModel> getAllSessionsOfAVehicle(@RequestParam(value = "session", defaultValue = "world") String session){
+        CommonResult<VehiclePositionModel> commonResult = new CommonResult<VehiclePositionModel>(ResultCode.SUCCESS.getCode(),
+                ResultCode.SUCCESS.getMsg());
+        commonResult.setData(new VehiclePositionModel(count.incrementAndGet(), session));
+        return commonResult;
     }
 
 }
