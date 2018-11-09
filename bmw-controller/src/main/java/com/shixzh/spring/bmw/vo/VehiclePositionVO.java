@@ -4,7 +4,7 @@ package com.shixzh.spring.bmw.vo;
  * @author: ZhaoShixiang <br>
  * @date: 2018/11/6 11:04
  */
-public class VehiclePositionModel {
+public class VehiclePositionVO {
 
     private long timestamp;
     private double latitude;
@@ -12,7 +12,7 @@ public class VehiclePositionModel {
     private int heading;
     private String session;
 
-    public VehiclePositionModel(long timestamp, String session) {
+    public VehiclePositionVO(long timestamp, String session) {
         this.timestamp = timestamp;
         this.session = session;
     }

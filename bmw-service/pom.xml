@@ -9,21 +9,26 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bmw-controller</artifactId>
+    <artifactId>bmw-service</artifactId>
+
     <dependencies>
+
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.shixzh.spring</groupId>
+            <artifactId>bmw-dao</artifactId>
         </dependency>
         <dependency>
             <groupId>com.shixzh.spring</groupId>
-            <artifactId>bmw-service</artifactId>
+            <artifactId>bmw-po</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.shixzh.spring</groupId>
+            <artifactId>bmw-dto</artifactId>
         </dependency>
         <dependency>
             <groupId>com.shixzh.spring</groupId>
             <artifactId>bmw-framework</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>
