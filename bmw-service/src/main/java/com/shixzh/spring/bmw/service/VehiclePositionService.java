@@ -13,4 +13,8 @@ import java.util.List;
 public interface VehiclePositionService {
 
     List<VehiclePositionDTO> getAllSessionsOfAVehicle(String vehicleId);
+
+    List<VehiclePositionDTO> getPositionListOfASession(String sessionId);
+
+    VehiclePositionDTO getLastPositionOfAVehicle(String vehicleId);
 }

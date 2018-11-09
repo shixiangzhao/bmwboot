@@ -2,20 +2,45 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.shixzh.spring.bmw.dao.VehiclePositionDao">
+<mapper namespace="com.shixzh.spring.bmw.dao.VehiclePositionMapperDao">
+    <resultMap id="vehiclePositionMap" type="com.shixzh.spring.bmw.po.VehiclePositionPO">
+        <id property="timestamp" column="timestamp"/>
+        <result property="vehicleId" column="vehicle_id"/>
+        <result property="sessionId" column="session_id"/>
+        <result property="latitude" column="lat"/>
+        <result property="longitude" column="lon"/>
+        <result property="heading" column="heading"/>
+    </resultMap>
+
     <sql id="Base_Column_List">
       `timestamp`, vehicle_id, session_id, lat, lon, heading
     </sql>
 
-    <select id="selectAllSessionsByVehicleId" resultType="com.shixzh.spring.bmw.po.VehiclePositionPO">
+    <select id="selectAllSessionsByVehicleId" resultMap="vehiclePositionMap">
         SELECT
-        DISTINCT session_id,
-        `timestamp`,
-        vehicle_id,
-        lat,
-        lon,
-        heading
+        DISTINCT session_id
         FROM vehicle_position
         WHERE vehicle_id = #{vehicleId}
+        ORDER BY `timestamp`
+    </select>
+
+    <select id="selectPositionListOfASession" resultMap="vehiclePositionMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM vehicle_position
+        WHERE session_id = #{sessionId}
+        ORDER BY `timestamp`
+    </select>
+
+    <select id="selectLastPositionOfAVehicle" resultMap="vehiclePositionMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM vehicle_position
+        WHERE vehicle_id = #{vehicleId} AND `timestamp` = (
+            SELECT
+            MAX(`timestamp`)
+            FROM vehicle_position
+            WHERE vehicle_id = #{vehicleId}
+        );
     </select>
 </mapper>

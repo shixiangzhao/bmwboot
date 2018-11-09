@@ -10,7 +10,8 @@ public class VehiclePositionPO {
     private double latitude;
     private double longitude;
     private int heading;
-    private String session;
+    private String sessionId;
+    private String vehicleId;
 
     public long getTimestamp() {
         return timestamp;
@@ -44,22 +45,31 @@ public class VehiclePositionPO {
         this.heading = heading;
     }
 
-    public String getSession() {
-        return session;
+    public String getSessionId() {
+        return sessionId;
     }
 
-    public void setSession(String session) {
-        this.session = session;
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    public String getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(String vehicleId) {
+        this.vehicleId = vehicleId;
     }
 
     @Override
     public String toString() {
-        return "ViheclePositionPO{" +
+        return "VehiclePositionPO{" +
                 "timestamp=" + timestamp +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
                 ", heading=" + heading +
-                ", session='" + session + '\'' +
+                ", sessionId='" + sessionId + '\'' +
+                ", vehicleId='" + vehicleId + '\'' +
                 '}';
     }
 }
